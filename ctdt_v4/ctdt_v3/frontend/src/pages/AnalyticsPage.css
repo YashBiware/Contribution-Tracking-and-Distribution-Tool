@@ -1,0 +1,5 @@
+.analytics-page-header{display:flex;align-items:flex-start;justify-content:space-between;flex-wrap:wrap;gap:12px}
+.analytics-metric-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:13px;margin-bottom:20px}
+.analytics-charts-row{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.analytics-chart-card{min-width:0}
+@media(max-width:900px){.analytics-charts-row{grid-template-columns:1fr}}

@@ -1,0 +1,105 @@
+<mxfile host="app.diagrams.net">
+  <diagram name="CTDT Class Diagram (Final)">
+    <mxGraphModel dx="1400" dy="900" grid="1" gridSize="10">
+      <root>
+        <mxCell id="0"/>
+        <mxCell id="1" parent="0"/>
+
+        <!-- Project -->
+        <mxCell id="c1" value="Project
+-------------------------
+projectId : Long
+projectName : String
+directoryPath : String
+status : Status
+createdAt : LocalDateTime
+
++ setProjectName()
++ setDirectoryPath()
++ setStatus()" style="shape=rectangle;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="100" y="50" width="260" height="200" as="geometry"/>
+        </mxCell>
+
+        <!-- Contributor -->
+        <mxCell id="c2" value="Contributor
+-------------------------
+contributorId : Long
+contributorName : String
+username : String
+passwordHash : String
+joinedAt : LocalDateTime
+
++ setContributorName()
++ setUsername()
++ setPasswordHash()" style="shape=rectangle;" vertex="1" parent="1">
+          <mxGeometry x="450" y="50" width="280" height="200" as="geometry"/>
+        </mxCell>
+
+        <!-- ContributionLog -->
+        <mxCell id="c3" value="ContributionLog
+-------------------------
+logId : Long
+fileName : String
+contentSize : BigDecimal
+weightFactor : BigDecimal
+contributionType : String
+retainedFlag : Boolean
+timestamp : Timestamp" style="shape=rectangle;" vertex="1" parent="1">
+          <mxGeometry x="100" y="320" width="300" height="200" as="geometry"/>
+        </mxCell>
+
+        <!-- ContributionResult -->
+        <mxCell id="c4" value="ContributionResult
+-------------------------
+resultId : Long
+percentage : BigDecimal
+lastUpdated : Timestamp" style="shape=rectangle;" vertex="1" parent="1">
+          <mxGeometry x="450" y="320" width="260" height="160" as="geometry"/>
+        </mxCell>
+
+        <!-- RecalculationHistory -->
+        <mxCell id="c5" value="RecalculationHistory
+-------------------------
+historyId : Long
+triggeredAt : Timestamp
+totalProjectWeight : BigDecimal
+executionTimeMs : Long" style="shape=rectangle;" vertex="1" parent="1">
+          <mxGeometry x="800" y="320" width="300" height="160" as="geometry"/>
+        </mxCell>
+
+        <!-- Relationships -->
+
+        <!-- Project to Contributor -->
+        <mxCell edge="1" parent="1" source="c1" target="c2" value="1 → *">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <!-- Contributor to ContributionLog -->
+        <mxCell edge="1" parent="1" source="c2" target="c3" value="1 → *">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <!-- Project to ContributionLog -->
+        <mxCell edge="1" parent="1" source="c1" target="c3" value="1 → *">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <!-- Contributor to ContributionResult -->
+        <mxCell edge="1" parent="1" source="c2" target="c4" value="1 → 1 (per project)">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <!-- Project to ContributionResult -->
+        <mxCell edge="1" parent="1" source="c1" target="c4" value="1 → *">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <!-- Project to History -->
+        <mxCell edge="1" parent="1" source="c1" target="c5" value="1 → *">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

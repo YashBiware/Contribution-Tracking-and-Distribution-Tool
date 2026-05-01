@@ -1,0 +1,10 @@
+.metric-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--r-lg);padding:18px 22px;box-shadow:var(--sh-xs);min-width:0}
+.metric-card--accent{background:var(--primary);border-color:var(--primary-dark)}
+.metric-card__label{font-size:.7rem;font-weight:600;text-transform:uppercase;letter-spacing:.09em;color:var(--text-muted);margin-bottom:10px}
+.metric-card--accent .metric-card__label{color:rgba(255,255,255,.7)}
+.metric-card__value{font-size:1.85rem;font-weight:700;letter-spacing:-.03em;color:var(--text);line-height:1}
+.metric-card--accent .metric-card__value{color:#fff}
+.metric-card__sub{font-size:.75rem;color:var(--text-muted);margin-top:6px}
+.metric-card--accent .metric-card__sub{color:rgba(255,255,255,.65)}
+@keyframes shimmer{0%{background-position:-400px 0}100%{background-position:400px 0}}
+.metric-card__skeleton{height:2rem;width:70%;border-radius:var(--r);background:linear-gradient(90deg,var(--surface-2) 25%,var(--border) 50%,var(--surface-2) 75%);background-size:800px 100%;animation:shimmer 1.4s infinite linear;margin-top:2px}

@@ -1,0 +1,9 @@
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:7px;border:none;border-radius:var(--r);font-family:var(--font);font-weight:500;cursor:pointer;transition:background .13s,opacity .13s;white-space:nowrap}
+.btn:active:not(:disabled){transform:scale(.975)}.btn:disabled{opacity:.52;cursor:not-allowed}.btn--block{width:100%}
+.btn--sm{padding:6px 13px;font-size:.8rem}.btn--md{padding:9px 18px;font-size:.875rem}.btn--lg{padding:12px 24px;font-size:.94rem}
+.btn--primary{background:var(--primary);color:#fff;box-shadow:0 1px 3px rgba(47,93,80,.25)}.btn--primary:hover:not(:disabled){background:var(--primary-dark)}
+.btn--outline{background:transparent;color:var(--primary);border:1.5px solid var(--primary)}.btn--outline:hover:not(:disabled){background:var(--primary-light)}
+.btn--ghost{background:transparent;color:var(--text-2);border:1px solid var(--border)}.btn--ghost:hover:not(:disabled){background:var(--surface-2)}
+.btn--danger{background:var(--error-bg);color:var(--error);border:1px solid #e5c5c5}
+@keyframes btn-spin{to{transform:rotate(360deg)}}
+.btn__spinner{width:14px;height:14px;border:2px solid rgba(255,255,255,.35);border-top-color:currentColor;border-radius:50%;animation:btn-spin .7s linear infinite;flex-shrink:0}

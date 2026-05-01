@@ -1,0 +1,100 @@
+# =========================================================
+# CTDT BACKEND SETUP & RUN COMMAND HISTORY
+# =========================================================
+
+# 1. Navigate to the backend project folder
+# (This is where the pom.xml file is located)
+cd "C:\Users\yashb\Desktop\CTCD\CTDT version 2.0\ctdt\backend"
+
+
+# 2. Check Java installation (Spring Boot 3 requires Java 17+)
+java -version
+
+
+# 3. Check Maven installation
+# Maven is required to build and run the Spring Boot project
+mvn -version
+
+
+# 4. Clean old compiled files
+# Removes the previous build to avoid dependency or compile conflicts
+mvn clean
+
+
+# 5. Compile the project
+# Verifies that the Java code compiles successfully
+mvn compile
+
+
+# 6. Run the Spring Boot backend server
+# This starts the embedded Tomcat server on port 8080
+mvn spring-boot:run
+
+
+# ---------------------------------------------------------
+# SERVER SHOULD NOW PRINT SOMETHING LIKE:
+# Tomcat started on port 8080
+# Started CtdtApplication
+# ---------------------------------------------------------
+
+
+# 7. Stop the running backend server
+# Press this inside the terminal running Spring Boot
+CTRL + C
+
+
+# =========================================================
+# DATABASE COMMANDS (MySQL)
+# =========================================================
+
+# 8. Login to MySQL database
+mysql -u root -p
+
+
+# 9. Select the CTDT database
+USE ctdt_db;
+
+
+# 10. Check if project table exists and contains data
+SELECT * FROM project;
+
+
+# 11. Insert a sample project for API testing
+INSERT INTO project (project_id, name)
+VALUES (1, 'Test Project');
+
+
+# 12. Verify inserted data
+SELECT * FROM project;
+
+
+# =========================================================
+# API TESTING (BROWSER OR POSTMAN)
+# =========================================================
+
+# Open browser and test backend endpoints
+
+# Get all projects
+http://localhost:8080/api/projects
+
+# Get project history
+http://localhost:8080/api/projects/1/history
+
+# Get analytics
+http://localhost:8080/api/projects/1/analytics
+
+
+# =========================================================
+# OPTIONAL DEBUG COMMANDS
+# =========================================================
+
+# Run Spring Boot with detailed debug logs
+mvn spring-boot:run -X
+
+
+# Run Spring Boot showing full exception stack traces
+mvn spring-boot:run -e
+
+
+# Full clean build (fixes many dependency/build issues)
+mvn clean install
